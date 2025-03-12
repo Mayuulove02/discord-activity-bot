@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/keepalive",
+      "schedule": "*/5 * * * *"
+    }
+  ],
+  "env": {
+    "DISCORD_TOKEN": "@discord_token",
+    "MONGODB_URI": "@mongodb_uri",
+    "CLIENT_ID": "@client_id"
+  }
+}
